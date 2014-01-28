@@ -1,0 +1,39 @@
+{% extends "layout.twig" %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-condensed table-hover">
+                <thead>
+                    <tr>
+                        <th>სახელი</th>
+                        <th>გვარი</th>
+                        <th>ელ-ფოსტა</th>
+                        <th>მოქმედება</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in users %}
+                    <tr>
+                        <td>
+                            {{ user.first_name }}
+                        </td>
+                        <td>
+                            {{ user.last_name }}
+                        </td>
+                        <td>
+                            {{ user.email }}
+                        </td>
+                        <td>
+                            <a href="{{ path('user_edit', {'id': user.id}) }}">შეცვლა</a> | 
+                            <a href="{{ path('user_delete', {'id': user.id}) }}">წაშლა</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{%endblock %}

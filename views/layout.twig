@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Silex CRUD | {% block title %}{% endblock%} </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="http://localhost/silex/web/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+         <div class="container">
+    <nav class="navbar navbar-default" role="navigation">
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">მომხმარებლები <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="{{ path('user_list') }}">ჩამონათვალი</a></li>
+              <li><a href="{{ path('user_add') }}">+ დამატება</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </nav>
+   </div>
+        
+    {% block body %} {%endblock %}
+      
+    <script src="http://localhost/silex/web/js/jquery-1.10.2.min.js" type="text/javascript"></script>
+    <script src="http://localhost/silex/web/js/bootstrap.min.js" type="text/javascript"></script>
+  </body>
+</html>
